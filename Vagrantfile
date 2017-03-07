@@ -31,18 +31,18 @@ Vagrant.configure("2") do |config|
     cp /home/vagrant/.ssh/authorized_keys .ssh/
   SHELL
   end
-  #config.vm.define "node2" do |node2|
- # 	node2.vm.box = "centos/7"
-#	node2.vm.provision "shell", inline: <<-SHELL
-  #  sudo su -
- #   cd /root
- #   mkdir .ssh
- #   chmod 700 .ssh
- #   cp /home/vagrant/.ssh/authorized_keys .ssh/
- # SHELL
+  config.vm.define "node2" do |node2|
+  	node2.vm.box = "centos/7"
+	node2.vm.provision "shell", inline: <<-SHELL
+    sudo su -
+    cd /root
+    mkdir .ssh
+    chmod 700 .ssh
+    cp /home/vagrant/.ssh/authorized_keys .ssh/
+  SHELL
 #	node2.ssh.username = 'root'
 # 	node2.ssh.inert_key = 'false'
-#  end
+  end
 
   # Disable automatic box update checking. If you disable this, then
 
