@@ -1,0 +1,8 @@
+- hosts: node2
+  user: root
+  tasks:
+    - name: install epel package from yum 
+      yum: name=epel-release state=latest
+    - name: install jq
+      yum: name=jq state=latest  
+   
